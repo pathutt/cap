@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Home</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row ">
+            <div class="offset-md-4 mt-5">
+                <h3 class="mb-1">Estimate Volume Sold</h3>
+                <form action="/home" method="post" class="mt-2 mb-2">
+                    <label for="price" class="sr-only" >Price</label>
+                    <input type="text" name="price" class="form-control mb-1" placeholder="Enter Price">
+                    <input type="submit" class="btn btn-primary" name="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-md-4 mt-2">
+                {% if price %}
+                    <p>The estimated volume sold is: {{ volume }} avocados</p>
+                    {% if volume > 295000 %}
+                        <p>The volume returned is considered to be a high volume sold.</p>
+                    {% else %}
+                        <p>The volume returned is considered to be a low volume sold.</p>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+        <div class="row">
+            <img src="{{ vis1 }}" alt="my plot">
+            <img src="{{ vis2 }}" alt="my plot">
+        </div>
+        <div class="row">
+            <img src="{{ vis3 }}" alt="my plot">
+        </div>
+    </div>
+</body>
+</html>

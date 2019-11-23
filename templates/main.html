@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Login Page</title>
+</head>
+<body>
+    <div class="row mt-3">
+            <div class="offset-md-4 mt-2">
+                {% if incorrect %}
+                    <h4 class="text-danger">Username or Password is incorrect.</h4>
+                {% endif %}
+            </div>
+        </div>
+    <div class="mx-auto row col-md-4">
+        <form action="/" method="POST" class="col-md-12 text-center mt-5" >
+            <h1 class="mb-4 font-weight-normal ">Sign In</h1>
+            <label for="inputUserName" class="sr-only" >Username</label>
+            <input type="username" id="inputUerName" class="form-control" placeholder="Username" required="" autofocus="" name="username">
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="" name="password">
+            <button class="btn btn-lg btn-primary btn-block mt-4" type="submit">Sign in</button>
+        </form>
+    </div>
+</body>
+</html>
